@@ -3,8 +3,8 @@ Applies CQL syntax highlighting only to string literals inside Rust's `cql!` mac
 
 ```rust
 macro_rules! cql {
-    ($query:expr) => {
-        $query
+    ($stmt:expr) => {
+        $stmt
     };
 }
 ```
