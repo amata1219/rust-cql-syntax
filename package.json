@@ -1,0 +1,32 @@
+{
+  "name": "rust-cql-syntax",
+  "displayName": "rust-cql-syntax",
+  "description": "CQL Syntax Highlighting for Rust string literals inside `cql!` macro.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "path": "./syntaxes/highlight-cql-string.json",
+        "scopeName": "inline-cql.injection",
+        "injectTo": ["source.rust"],
+        "embeddedLanguages": {
+            "meta.embedded.cql": "cql"
+        }
+      },
+      {
+        "scopeName": "source.cql",
+        "path": "./syntaxes/cql.tmLanguage.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amata1219/rust-cql-syntax.git"
+  }
+}

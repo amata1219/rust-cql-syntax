@@ -1,0 +1,129 @@
+{
+  "name": "Cassandra Query Language",
+  "scopeName": "source.cql",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#datatypes"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#literals"
+    },
+    {
+      "include": "#punctuation"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.cql",
+          "match": "\\b(SELECT|FROM|WHERE|INSERT|INTO|UPDATE|DELETE|SET|USE|ALTER|CREATE|DROP|TRUNCATE|BEGIN|BATCH|APPLY|COMMIT|IF|EXISTS|PRIMARY|KEY|ORDER|BY|LIMIT|ALLOW|FILTERING|AND|OR|NOT|IN|WITH|USING|DISTINCT|AS|PER|TOKEN|DESC|ASC|STATIC|TTL|WRITETIME|VALUES)\\b"
+        },
+        {
+          "name": "keyword.other.cql",
+          "match": "\\b(ANY|ALL|FALSE|TRUE|NULL|CONSISTENCY|QUORUM|LOCAL_ONE|LOCAL_QUORUM|ONE|TWO|THREE|EACH_QUORUM|LOCAL_SERIAL|SERIAL|ALL)\\b"
+        }
+      ]
+    },
+    "datatypes": {
+      "patterns": [
+        {
+          "name": "storage.type.cql",
+          "match": "\\b(text|int|bigint|boolean|decimal|double|float|inet|list|map|set|timestamp|uuid|timeuuid|varint|blob|ascii|counter|tuple|frozen)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.cql",
+          "match": "(\\+|\\-|\\*|\\/|%|=|<|>|<=|>=|!=|IN|\\.|\\?|:|::|=>|<\\-|->|\\[\\]|\\[\\]|\\b(?:AND|OR|NOT)\\b)"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "support.function.cql",
+          "match": "\\b(count|min|max|avg|sum|now|dateof|unixtimestampof|token|writetime|ttl|blobAsBigint|blobAsBoolean|blobAsCounter|blobAsDecimal|blobAsDouble|blobAsFloat|blobAsInet|blobAsInt|blobAsText|blobAsTimestamp|blobAsUUID|blobAsVarchar|blobAsVarint|bigintAsBlob|booleanAsBlob|counterAsBlob|decimalAsBlob|doubleAsBlob|floatAsBlob|inetAsBlob|intAsBlob|textAsBlob|timestampAsBlob|uuidAsBlob|varcharAsBlob|varintAsBlob|toUnixTimestamp|toTimestamp|toDate|toBlob|toTimeuuid|toUUID|toAscii|toBigint|toBoolean|toCounter|toDecimal|toDouble|toFloat|toInet|toInt|toText|toVarint)\\b"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.cql",
+          "match": "--.*$"
+        },
+        {
+          "name": "comment.line.double-dash.cql",
+          "match": "--.*"
+        },
+        {
+          "name": "comment.block.cql",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "literals": {
+      "patterns": [
+        {
+          "name": "constant.numeric.cql",
+          "match": "\\b(\\d+|\\d+\\.\\d*|\\d*\\.\\d+)\\b"
+        },
+        {
+          "name": "constant.language.cql",
+          "match": "\\b(TRUE|FALSE|NULL)\\b"
+        },
+        {
+          "name": "string.quoted.single.cql",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.cql",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.double.cql",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.cql",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.definition.block.cql",
+          "match": "[{}()]"
+        },
+        {
+          "name": "punctuation.separator.cql",
+          "match": "[,;]"
+        }
+      ]
+    }
+  },
+  "fileTypes": ["cql"]
+}

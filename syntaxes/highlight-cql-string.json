@@ -1,0 +1,35 @@
+{
+    "scopeName": "inline-cql.injection",
+    "fileTypes": ["rs"],
+    "injectionSelector": ["L:source -comment -string"],
+    "patterns": [
+        {
+            "begin": "(cql!\\s*)(\\()(\")",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.macro.cql.rust"
+                },
+                "2": {
+                    "name": "punctuation.brackets.round.rust"
+                },
+                "3": {
+                    "name": "string.quoted.double.rust"
+                }
+            },
+            "end": "(\")(\\))",
+            "endCaptures": {
+                "1": {
+                    "name": "string.quoted.double.rust"
+                },
+                "2": {
+                    "name": "punctuation.brackets.round.rust"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.cql"
+                }
+            ]
+        }
+    ]
+}
