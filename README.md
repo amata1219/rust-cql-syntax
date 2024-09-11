@@ -13,7 +13,7 @@ macro_rules! cql {
 ![Image](sample.png)
 
 ### 制限 (Limitation)
-使用するためにVSCodeで以下の設定が必要です。
+使用するためにVSCodeで以下の設定が必要です。<br>
 The following settings are required in VSCode in order to use it.
 ```json
 {
