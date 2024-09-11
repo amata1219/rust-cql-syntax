@@ -1,6 +1,6 @@
 {
   "name": "rust-cql-syntax",
-  "displayName": "rust-cql-syntax",
+  "displayName": "CQL Syntax for Rust",
   "description": "CQL Syntax Highlighting for Rust string literals inside `cql!` macro.",
   "version": "0.0.1",
   "engines": {
